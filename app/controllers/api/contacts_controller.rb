@@ -1,4 +1,6 @@
 class Api::ContactsController < ApplicationController
+  protect_from_forgery with: :null_session
+
   def index
     @contacts = Contact.all
     render "index.json.jb"
